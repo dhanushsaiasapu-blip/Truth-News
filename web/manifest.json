@@ -1,0 +1,40 @@
+{
+  "name": "Truth",
+  "short_name": "Truth",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0A0A1A",
+  "theme_color": "#0A0A1A",
+  "description": "Truth - Balanced News",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "assets/assets/images/WhatsApp_Image_2026-09-13_at_7.49.52_PM-1789309207213.jpeg",
+      "sizes": "any",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

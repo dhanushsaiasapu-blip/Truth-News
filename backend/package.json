@@ -1,0 +1,9 @@
+{
+  "name": "truth-news-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.mjs" },
+  "dependencies": { "fast-xml-parser": "^5.2.5" }
+}

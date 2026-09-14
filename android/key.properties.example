@@ -1,0 +1,4 @@
+storeFile=../truth-upload-keystore.jks
+storePassword=CHANGE_ME
+keyAlias=truth-upload
+keyPassword=CHANGE_ME
