@@ -163,7 +163,7 @@ async function openAIJson(prompt) {
       input: prompt,
       text: { format: { type: 'json_object' } },
     }),
-    signal: AbortSignal.timeout(20000),
+    signal: AbortSignal.timeout(8000),
   });
   if (!response.ok) {
     const body = await response.text();
@@ -220,9 +220,21 @@ async function getStories(categories) {
     if(seen.has(s.articleUrl)) return false; seen.add(s.articleUrl); return true;
   });
   const merged=mergeStories(unique);
-  const enriched=[];
-  for(const story of merged) enriched.push(await enrichStory(story));
-  return enriched;
+  // Enrich stories concurrently with a small limit.
+const enriched = [];
+const concurrency = 6;
+
+for (let i = 0; i < merged.length; i += concurrency) {
+  const batch = merged.slice(i, i + concurrency);
+
+  const batchResults = await Promise.all(
+    batch.map(story => enrichStory(story)),
+  );
+
+  enriched.push(...batchResults);
+}
+
+return enriched;
 }
 function sendJson(res,status,body) {
   const text=JSON.stringify(body);
